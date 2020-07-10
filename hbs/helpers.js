@@ -2,7 +2,7 @@
 
 const hbs = require('hbs');
 
-let nombre = "Hugo Rodriguez"
+let nombre = "hugo rodríguez";
 
 
 hbs.registerHelper('getAnio', () => {
@@ -12,5 +12,17 @@ hbs.registerHelper('nombreCompleto', () => {
     return nombre;
 });
 hbs.registerHelper('nombre', () => {
-    return 'Hugo';
+    return nombre ;
 });
+
+hbs.registerHelper('capitalizar', ( texto )  => {
+    
+    let palabras = texto.split(' ');
+    palabras.forEach( (palabra , idx ) => { 
+        palabras[idx] = palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase();
+        
+    });
+
+    return palabras.join(' ');
+
+} );

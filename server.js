@@ -8,7 +8,7 @@ require('./hbs/helpers');
 const port = process.env.PORT || 8080;
 
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public')); // middleware
 
 // Express HBS
 hbs.registerPartials(__dirname + '/views/parciales');
